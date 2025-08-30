@@ -213,7 +213,7 @@ function App() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#download">
-                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2">
+                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2 w-full sm:w-auto">
                     <Download className="w-5 h-5" />
                     <span>{t.hero.downloadNow}</span>
                   </button>
@@ -370,7 +370,7 @@ function App() {
                 <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto flex items-center justify-center shadow-xl">
                   <Camera className="w-16 h-16 text-white" />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                <div className="absolute -top-2 right-4 md:-right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
                   1
                 </div>
               </div>
@@ -387,7 +387,7 @@ function App() {
                 <div className="w-32 h-32 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mx-auto flex items-center justify-center shadow-xl">
                   <Zap className="w-16 h-16 text-white" />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                <div className="absolute -top-2 right-4 md:-right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
                   2
                 </div>
               </div>
@@ -404,7 +404,7 @@ function App() {
                 <div className="w-32 h-32 bg-gradient-to-r from-green-600 to-blue-600 rounded-full mx-auto flex items-center justify-center shadow-xl">
                   <CheckCircle className="w-16 h-16 text-white" />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                <div className="absolute -top-2 right-4 md:-right-2 w-8 h-8 bg-orange-400 text-white rounded-full flex items-center justify-center text-sm font-bold">
                   3
                 </div>
               </div>
@@ -438,7 +438,7 @@ function App() {
       >
         <div className="max-w-6xl mx-auto flex flex-col gap-16 px-4 justify-items-center text-center">
           <div className="max-w-3xl mx-auto bg-yellow-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <Globe className="text-blue-500" />
+            <Globe className="text-blue-500 -ml-4 mb-4" />
             <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t.policy.privacyTitle}
             </h2>
@@ -448,7 +448,7 @@ function App() {
           </div>
 
           <div className="max-w-3xl mx-auto bg-fuchsia-100 dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <ScanEye className="text-violet-500 dark:text-fuchsia-500" />
+            <ScanEye className="text-violet-500 dark:text-fuchsia-500 -ml-4 mb-4" />
             <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t.policy.cameraTitle}
             </h2>
@@ -458,7 +458,7 @@ function App() {
           </div>
 
           <div className="max-w-3xl mx-auto bg-blue-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <Shield className="text-green-500" />
+            <Shield className="text-green-500 -ml-4 mb-4" />
             <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t.policy.securityTitle}
             </h2>
