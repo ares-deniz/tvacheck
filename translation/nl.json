@@ -1,0 +1,74 @@
+{
+  "appName": "TvaCheck",
+  "nav": {
+    "features": "Functies",
+    "howItWorks": "Hoe het werkt",
+    "download": "Downloaden"
+  },
+  "hero": {
+    "titlePrefix": "Directe herkenning van",
+    "titleHighlight": "btw-nummer",
+    "subtitle": "Bij TvaCheck bieden we een betrouwbare app om btw-nummers in België te controleren, zodat bedrijven snel problemen met hun registratie en btw-naleving kunnen verifiëren.",
+    "downloadNow": "Nu downloaden",
+    "demo": "Demo",
+    "users": "1000+ gebruikers",
+    "rating": "4.9",
+    "reviews": "(200) beoordelingen"
+  },
+  "phone": {
+    "tagline": "Betrouwbare controles van btw-nummers",
+    "instant": "Directe btw-controle",
+    "sampleCompany": "Bedrijf: Bedrijfsnaam",
+    "sampleVat": "BTW: BE0123456789",
+    "sampleStatus": "Status: Actief"
+  },
+  "features": {
+    "heading": "Betrouwbare controles van btw-nummers",
+    "desc": "Onze missie is het vereenvoudigen van btw-controles voor bedrijven in België, door hen te helpen hun naleving te behouden en mogelijke problemen met btw-registraties te voorkomen, dankzij onze gebruiksvriendelijke app.",
+    "items": {
+      "recognitionTitle": "Directe herkenning",
+      "recognitionDesc": "Geavanceerde OCR-technologie herkent btw-nummers op foto's in milliseconden.",
+      "fastTitle": "Bliksemsnel",
+      "fastDesc": "Ontvang direct volledige bedrijfsinformatie, inclusief bedrijfsgegevens, status en contactgegevens.",
+      "secureTitle": "Veilig en privé",
+      "secureDesc": "Alle verwerking gebeurt lokaal op uw toestel. Uw privacy en veiligheid zijn onze hoogste prioriteit."
+    }
+  },
+  "how": {
+    "heading": "Hoe werkt TvaCheck",
+    "desc": "Drie eenvoudige stappen voor volledige btw-informatie",
+    "step1Title": "Maak een foto of voeg handmatig toe",
+    "step1Desc": "Richt eenvoudig uw camera op een btw-nummer op documenten, facturen of visitekaartjes.",
+    "step2Title": "Directe verwerking",
+    "step2Desc": "Onze AI-gestuurde OCR herkent en valideert het btw-nummer onmiddellijk.",
+    "step3Title": "Ontvang resultaten",
+    "step3Desc": "Ontvang uitgebreide bedrijfsinformatie, waaronder de bedrijfsnaam, het adres en de verificatiestatus."
+  },
+  "interface": {
+    "title": "Gebruiksvriendelijke interface",
+    "desc": "Navigeer eenvoudig door de app om btw-nummers te controleren zonder gedoe of verwarring."
+  },
+  "policy": {
+    "privacyTitle": "Privacybeleid van TVA Check BE",
+    "privacyDesc": "De informatie van TVA Check BE is rechtstreeks afkomstig van officiële bronnen, waaronder de site van de Belgische economie, data.be en checkobligationderetenue.be. Deze platforms garanderen de betrouwbaarheid van de verstrekte gegevens over bedrijven en btw-statussen. TVA Check BE kan echter niet aansprakelijk worden gesteld voor onjuistheden of ontbrekende updates van deze officiële bronnen. Ons doel is de toegang tot informatie te vergemakkelijken, maar we raden gebruikers aan om voor grondige verificatie de officiële bronnen te raadplegen.",
+    "cameraTitle": "Toestemmingen voor cameratoegang",
+    "cameraDesc": "TVA Check BE heeft toegang tot de camera van uw apparaat nodig om btw-nummers rechtstreeks vanaf papieren documenten vast te leggen en te lezen. Deze toestemming wordt uitsluitend gebruikt om het scannen te vergemakkelijken en leidt niet tot verzameling van persoonlijke of gevoelige gegevens.",
+    "securityTitle": "Gegevensbescherming en veiligheid",
+    "securityDesc": "TVA Check BE verzamelt, bewaart of deelt geen persoonlijke gegevens. Alle informatie die door de app wordt verwerkt, is uitsluitend afkomstig van de genoemde officiële sites en wordt alleen ter informatie weergegeven. We garanderen dat de app veilig is en uw privacy respecteert. Er worden geen gevoelige gegevens opgeslagen of aan derden doorgegeven. Door TVA Check BE te gebruiken, erkent u dat de verstrekte informatie is gebaseerd op officiële openbare bronnen die voor het grote publiek toegankelijk zijn, zoals in de app vermeld."
+  },
+  "cta": {
+    "title": "Klaar om uw btw‑workflow te verbeteren?",
+    "desc": "Sluit u aan bij duizenden professionals die vertrouwen op TvaCheck voor directe herkenning van hun btw-nummer.",
+    "ios": "Gratis downloaden voor iOS",
+    "android": "Binnenkort beschikbaar voor Android",
+    "footNote": "Gratis download • Premiumfuncties beschikbaar • Geen advertenties"
+  },
+  "footer": {
+    "tagline": "Directe btw‑controle voor Belgische bedrijven.",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "lang": {
+    "current": "NL",
+    "toggle": "Taal"
+  }
+}

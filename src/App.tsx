@@ -7,7 +7,6 @@ import {
   CheckCircle,
   ArrowRight,
   Smartphone,
-  Users,
   Star,
   Moon,
   Sun,
@@ -16,10 +15,16 @@ import {
   Globe,
   ScanEye,
 } from 'lucide-react';
+import introApp from './assets/intro-app.png';
+import scanApp from './assets/scan-app.png';
+import fr from '../translation/fr.json';
+import nl from '../translation/nl.json';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState<'fr' | 'nl'>('fr');
+  const t = lang === 'fr' ? fr : nl;
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -45,6 +50,10 @@ function App() {
     }
   };
 
+  const toggleLanguage = () => {
+    setLang((prev) => (prev === 'fr' ? 'nl' : 'fr'));
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -68,7 +77,7 @@ function App() {
               </div>
               <a href="#home">
                 <span className="text-xl font-bold text-gray-900 dark:text-white">
-                  TvaCheck
+                  {t.appName}
                 </span>
               </a>
             </div>
@@ -79,14 +88,23 @@ function App() {
                 href="#features"
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Caractéristiques
+                {t.nav.features}
               </a>
               <a
                 href="#how-it-works"
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Comment ça marche
+                {t.nav.howItWorks}
               </a>
+              <button
+                onClick={toggleLanguage}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center"
+                aria-label="Toggle language"
+                title={t.lang.toggle}
+              >
+                <Globe className="w-5 h-5" />
+                <span className="ml-2 hidden lg:inline">{t.lang.current}</span>
+              </button>
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -102,12 +120,21 @@ function App() {
                 href="#download"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-200"
               >
-                Télécharger
+                {t.nav.download}
               </a>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
+              <button
+                onClick={toggleLanguage}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center"
+                aria-label="Toggle language"
+                title={t.lang.toggle}
+              >
+                <Globe className="w-5 h-5" />
+                <span className="ml-2 hidden lg:inline">{t.lang.current}</span>
+              </button>
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -146,21 +173,21 @@ function App() {
               onClick={closeMobileMenu}
               className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2"
             >
-              Caractéristiques
+              {t.nav.features}
             </a>
             <a
               href="#how-it-works"
               onClick={closeMobileMenu}
               className="block text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2"
             >
-              Comment ça marche
+              {t.nav.howItWorks}
             </a>
             <a
               href="#download"
               onClick={closeMobileMenu}
               className="block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-lg text-center font-semibold"
             >
-              Télécharger
+              {t.nav.download}
             </a>
           </div>
         </div>
@@ -173,17 +200,14 @@ function App() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-                  Reconnaissance instantanée du numéro de
+                  {t.hero.titlePrefix}
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {' '}
-                    TVA
+                    {t.hero.titleHighlight}
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Chez TvaCheck, nous fournissons une application fiable pour
-                  vérifier les numéros de TVA en Belgique, permettant aux
-                  entreprises de vérifier rapidement tout problème lié à leur
-                  enregistrement et conformité TVA.
+                  {t.hero.subtitle}
                 </p>
               </div>
 
@@ -191,11 +215,11 @@ function App() {
                 <a href="#download">
                   <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2">
                     <Download className="w-5 h-5" />
-                    <span>Télécharger maintenant</span>
+                    <span>{t.hero.downloadNow}</span>
                   </button>
                 </a>
                 <button className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2">
-                  <span>Demo</span>
+                  <span>{t.hero.demo}</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
@@ -208,16 +232,16 @@ function App() {
                     <div className="w-8 h-8 bg-orange-500 rounded-full border-2 border-white dark:border-gray-900"></div>
                   </div>
                   <span className="text-sm text-gray-600 dark:text-gray-400">
-                    1000+ utilisateurs
+                    {t.hero.users}
                   </span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Star className="w-5 h-5 text-yellow-400 fill-current" />
                   <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                    4.9
+                    {t.hero.rating}
                   </span>
                   <span className="text-sm text-gray-600 dark:text-gray-400">
-                    (200 ) avis
+                    {t.hero.reviews}
                   </span>
                 </div>
               </div>
@@ -243,19 +267,19 @@ function App() {
                           <Camera className="w-8 h-8 text-white" />
                         </div>
                         <p className="text-xs text-gray-600">
-                          Vérifications Fiables des Numéros de TVA
+                          {t.phone.tagline}
                         </p>
                       </div>
                     </div>
 
                     <div className="bg-blue-50 rounded-xl p-4 space-y-2">
                       <div className="text-sm font-semibold text-gray-900">
-                        Vérification de TVA Instantanée
+                        {t.phone.instant}
                       </div>
                       <div className="text-xs text-gray-600">
-                        <div>Entreprise: Nom de l'entreprise</div>
-                        <div>TVA: BE0123456789</div>
-                        <div>Status: Active</div>
+                        <div>{t.phone.sampleCompany}</div>
+                        <div>{t.phone.sampleVat}</div>
+                        <div>{t.phone.sampleStatus}</div>
                       </div>
                     </div>
                   </div>
@@ -278,13 +302,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Vérifications Fiables des Numéros de TVA
+              {t.features.heading}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Notre mission est de simplifier la vérification de la TVA pour les
-              entreprises en Belgique, en les aidant à maintenir leur conformité
-              et à éviter les problèmes potentiels liés à leurs enregistrements
-              TVA, grâce à notre application conviviale.
+              {t.features.desc}
             </p>
           </div>
 
@@ -294,11 +315,10 @@ function App() {
                 <Camera className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Reconnaissance instantanée
+                {t.features.items.recognitionTitle}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                La technologie OCR avancée reconnaît les numéros TVA des photos
-                en quelques millisecondes.
+                {t.features.items.recognitionDesc}
               </p>
             </div>
 
@@ -307,12 +327,10 @@ function App() {
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Rapide comme l'éclair
+                {t.features.items.fastTitle}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Obtenez instantanément des informations commerciales complètes,
-                y compris les détails de l'entreprise, son statut et ses
-                coordonnées.
+                {t.features.items.fastDesc}
               </p>
             </div>
 
@@ -321,12 +339,10 @@ function App() {
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Sécurisé et privé
+                {t.features.items.secureTitle}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Tous les traitements de données s'effectuent localement sur
-                votre appareil. Votre confidentialité et votre sécurité sont nos
-                priorités absolues.
+                {t.features.items.secureDesc}
               </p>
             </div>
           </div>
@@ -341,11 +357,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Comment fonctionne TvaCheck
+              {t.how.heading}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Trois étapes simples pour obtenir des informations complètes sur
-              la TVA
+              {t.how.desc}
             </p>
           </div>
 
@@ -360,12 +375,10 @@ function App() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Prendre une photo ou l'ajouter manuellement
+                {t.how.step1Title}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Pointez simplement votre appareil photo vers n’importe quel
-                numéro de TVA sur des documents, des factures ou des cartes de
-                visite.
+                {t.how.step1Desc}
               </p>
             </div>
 
@@ -379,11 +392,10 @@ function App() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Traitement instantané
+                {t.how.step2Title}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Notre technologie OCR basée sur l’IA reconnaît et valide
-                instantanément le numéro de TVA.
+                {t.how.step2Desc}
               </p>
             </div>
 
@@ -397,11 +409,10 @@ function App() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Obtenez des résultats
+                {t.how.step3Title}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Recevez des informations commerciales complètes, notamment le
-                nom de l’entreprise, son adresse et son statut de vérification.
+                {t.how.step3Desc}
               </p>
             </div>
           </div>
@@ -413,13 +424,8 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 text-center text-white">
             <div className="flex flex-col items-center mx-auto">
-              <div className="text-4xl font-bold mb-2">
-                Interface conviviale
-              </div>
-              <div className="text-blue-100 ">
-                Naviguez facilement dans l’application pour vérifier les numéros
-                de TVA sans complications ni confusion.
-              </div>
+              <div className="text-4xl font-bold mb-2">{t.interface.title}</div>
+              <div className="text-blue-100 ">{t.interface.desc}</div>
             </div>
           </div>
         </div>
@@ -434,52 +440,30 @@ function App() {
           <div className="max-w-3xl mx-auto bg-yellow-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <Globe className="text-blue-500" />
             <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Politique de Confidentialité de TVA Check BE
+              {t.policy.privacyTitle}
             </h2>
             <p className="text-md text-gray-600 dark:text-gray-300">
-              Les informations de TVA Check BE proviennent directement de
-              sources officielles, notamment le site de l'économie belge,
-              data.be et checkobligationderetenue.be. Ces plateformes
-              garantissent la fiabilité des données fournies sur les entreprises
-              et les statuts de TVA. Cependant, TVA Check BE ne peut être tenu
-              responsable des inexactitudes ou des mises à jour manquantes
-              provenant de ces sources officielles. Notre objectif est de
-              faciliter l'accès aux informations, mais nous conseillons vivement
-              aux utilisateurs de consulter les sources officielles pour toute
-              vérification approfondie.
+              {t.policy.privacyDesc}
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto bg-fuchsia-100 dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <ScanEye className="text-violet-500 dark:text-fuchsia-500" />
             <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Permissions d’Accès à la Caméra
+              {t.policy.cameraTitle}
             </h2>
             <p className="text-md text-gray-600 dark:text-gray-300">
-              TVA Check BE requiert l'accès à la caméra de votre appareil pour
-              permettre la capture et la lecture des numéros de TVA directement
-              depuis des documents papier. Cette permission est strictement
-              utilisée pour faciliter la numérisation et ne donne lieu à aucune
-              collecte de données personnelles ou sensibles.
+              {t.policy.cameraDesc}
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto bg-blue-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <Shield className="text-green-500" />
             <h2 className="text-xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Protection des Données et Sécurité
+              {t.policy.securityTitle}
             </h2>
             <p className="text-md text-gray-600 dark:text-gray-300">
-              TVA Check BE ne collecte, ne stocke ni ne partage aucune donnée
-              personnelle. Toutes les informations traitées par l’application
-              proviennent exclusivement des sites officiels mentionnés et sont
-              affichées uniquement à titre d'information. Nous garantissons que
-              l'application est sécurisée et respecte votre vie privée. Aucune
-              donnée sensible n'est enregistrée ou transmise à des tiers. En
-              utilisant TVA Check BE, vous reconnaissez que les informations
-              fournies sont basées sur des sources publiques officielles et
-              accessibles au grand public, telles que listées dans
-              l’application.
+              {t.policy.securityDesc}
             </p>
           </div>
         </div>
@@ -487,29 +471,34 @@ function App() {
 
       {/* CTA Section */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-xl -space-y-10 md:space-y-0 mx-auto mb-12 grid grid-cols-1 md:flex justify-center items-center">
+          <img src={introApp} alt="logo" sizes="xl" />
+
+          <div className="mx-auto absolute w-32 h-32 bg-fuchsia-400 rounded-full opacity-10 animate-pulse delay-1000 hidden md:flex"></div>
+
+          <img src={scanApp} alt="logo" sizes="xl" className="mt-20 md:mt-0" />
+        </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Prêt à transformer votre flux de travail TVA ?
+            {t.cta.title}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Rejoignez des milliers de professionnels qui font confiance à
-            TvaCheck pour la reconnaissance instantanée de leur numéro de TVA.
+            {t.cta.desc}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-2">
               <Smartphone className="w-5 h-5" />
-              <span>Télécharger gratuitement pour iOS</span>
+              <span>{t.cta.ios}</span>
             </button>
             <button className="bg-gray-900 dark:bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2">
               <Smartphone className="w-5 h-5" />
-              <span>Bientôt disponible pour Android</span>
+              <span>{t.cta.android}</span>
             </button>
           </div>
 
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Téléchargement gratuit • Fonctionnalités premium disponibles • Pas
-            de publicité
+            {t.cta.footNote}
           </p>
         </div>
       </section>
@@ -528,15 +517,13 @@ function App() {
                 </div>
                 <span className="text-xl font-bold">TvaCheck</span>
               </div>
-              <p className="text-gray-400">
-                Vérification instantanée de la TVA pour les entreprises belges.
-              </p>
+              <p className="text-gray-400">{t.footer.tagline}</p>
             </div>
           </div>
 
           <div className="border-t border-gray-800 dark:border-gray-700 mt-12 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} TvaCheck. Tous droits réservés.
+              &copy; {new Date().getFullYear()} TvaCheck. {t.footer.rights}
             </p>
           </div>
         </div>

@@ -1,0 +1,74 @@
+{
+  "appName": "TvaCheck",
+  "nav": {
+    "features": "Caractéristiques",
+    "howItWorks": "Comment ça marche",
+    "download": "Télécharger"
+  },
+  "hero": {
+    "titlePrefix": "Reconnaissance instantanée du numéro de",
+    "titleHighlight": "TVA",
+    "subtitle": "Chez TvaCheck, nous fournissons une application fiable pour vérifier les numéros de TVA en Belgique, permettant aux entreprises de vérifier rapidement tout problème lié à leur enregistrement et conformité TVA.",
+    "downloadNow": "Télécharger maintenant",
+    "demo": "Demo",
+    "users": "1000+ utilisateurs",
+    "rating": "4.9",
+    "reviews": "(200) avis"
+  },
+  "phone": {
+    "tagline": "Vérifications Fiables des Numéros de TVA",
+    "instant": "Vérification de TVA Instantanée",
+    "sampleCompany": "Entreprise: Nom de l'entreprise",
+    "sampleVat": "TVA: BE0123456789",
+    "sampleStatus": "Status: Active"
+  },
+  "features": {
+    "heading": "Vérifications Fiables des Numéros de TVA",
+    "desc": "Notre mission est de simplifier la vérification de la TVA pour les entreprises en Belgique, en les aidant à maintenir leur conformité et à éviter les problèmes potentiels liés à leurs enregistrements TVA, grâce à notre application conviviale.",
+    "items": {
+      "recognitionTitle": "Reconnaissance instantanée",
+      "recognitionDesc": "La technologie OCR avancée reconnaît les numéros TVA des photos en quelques millisecondes.",
+      "fastTitle": "Rapide comme l'éclair",
+      "fastDesc": "Obtenez instantanément des informations commerciales complètes, y compris les détails de l'entreprise, son statut et ses coordonnées.",
+      "secureTitle": "Sécurisé et privé",
+      "secureDesc": "Tous les traitements de données s'effectuent localement sur votre appareil. Votre confidentialité et votre sécurité sont nos priorités absolues."
+    }
+  },
+  "how": {
+    "heading": "Comment fonctionne TvaCheck",
+    "desc": "Trois étapes simples pour obtenir des informations complètes sur la TVA",
+    "step1Title": "Prendre une photo ou l'ajouter manuellement",
+    "step1Desc": "Pointez simplement votre appareil photo vers n'importe quel numéro de TVA sur des documents, des factures ou des cartes de visite.",
+    "step2Title": "Traitement instantané",
+    "step2Desc": "Notre technologie OCR basée sur l'IA reconnaît et valide instantanément le numéro de TVA.",
+    "step3Title": "Obtenez des résultats",
+    "step3Desc": "Recevez des informations commerciales complètes, notamment le nom de l'entreprise, son adresse et son statut de vérification."
+  },
+  "interface": {
+    "title": "Interface conviviale",
+    "desc": "Naviguez facilement dans l'application pour vérifier les numéros de TVA sans complications ni confusion."
+  },
+  "policy": {
+    "privacyTitle": "Politique de Confidentialité de TVA Check BE",
+    "privacyDesc": "Les informations de TVA Check BE proviennent directement de sources officielles, notamment le site de l'économie belge, data.be et checkobligationderetenue.be. Ces plateformes garantissent la fiabilité des données fournies sur les entreprises et les statuts de TVA. Cependant, TVA Check BE ne peut être tenu responsable des inexactitudes ou des mises à jour manquantes provenant de ces sources officielles. Notre objectif est de faciliter l'accès aux informations, mais nous conseillons vivement aux utilisateurs de consulter les sources officielles pour toute vérification approfondie.",
+    "cameraTitle": "Permissions d'Accès à la Caméra",
+    "cameraDesc": "TVA Check BE requiert l'accès à la caméra de votre appareil pour permettre la capture et la lecture des numéros de TVA directement depuis des documents papier. Cette permission est strictement utilisée pour faciliter la numérisation et ne donne lieu à aucune collecte de données personnelles ou sensibles.",
+    "securityTitle": "Protection des Données et Sécurité",
+    "securityDesc": "TVA Check BE ne collecte, ne stocke ni ne partage aucune donnée personnelle. Toutes les informations traitées par l'application proviennent exclusivement des sites officiels mentionnés et sont affichées uniquement à titre d'information. Nous garantissons que l'application est sécurisée et respecte votre vie privée. Aucune donnée sensible n'est enregistrée ou transmise à des tiers. En utilisant TVA Check BE, vous reconnaissez que les informations fournies sont basées sur des sources publiques officielles et accessibles au grand public, telles que listées dans l'application."
+  },
+  "cta": {
+    "title": "Prêt à transformer votre flux de travail TVA ?",
+    "desc": "Rejoignez des milliers de professionnels qui font confiance à TvaCheck pour la reconnaissance instantanée de leur numéro de TVA.",
+    "ios": "Télécharger gratuitement pour iOS",
+    "android": "Bientôt disponible pour Android",
+    "footNote": "Téléchargement gratuit • Fonctionnalités premium disponibles • Pas de publicité"
+  },
+  "footer": {
+    "tagline": "Vérification instantanée de la TVA pour les entreprises belges.",
+    "rights": "Tous droits réservés."
+  },
+  "lang": {
+    "current": "FR",
+    "toggle": "Langue"
+  }
+}
